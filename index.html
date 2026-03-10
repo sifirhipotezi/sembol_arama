@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="authenticated" content="false">
+
+  <link rel="stylesheet" href="./pure-v2.0.6.css">
+  <link rel="stylesheet" href="./index.css">
+
+  <script src="./index.js" type="module"></script>
+
+  <title>cait sembol arama testi</title>
+</head>
+<body>
+  <div id="container">
+    <center>
+      <div class="header">
+        <a href="#" class="home-button">geri dön</a>
+      </div>
+    </center>
+
+    <h2>cait sembol arama</h2>
+
+    <div class="instructions">
+      <div class="panel">
+        <p><b>bu test telefon veya tablette doğru puan veremez.</b></p>
+        <p>pencereyi rahat kullanabileceğiniz bir boyuta getirin.</p>
+        <p>soldaki gri alanda bulunan 2 sembol hedef sembollerdir.</p>
+        <p>beyaz alandaki semboller arasında, hedeflerden biriyle eşleşeni bulun ve üzerine tıklayın.</p>
+        <p><b>en fazla 1 eşleşme olabilir.</b></p>
+        <p>hiç eşleşme yoksa <span class="no-example">yok</span> seçeneğine tıklayın.</p>
+        <h4>alıştırma #1 / 2</h4>
+      </div>
+
+      <div class="panel hidden">
+        <p>toplam 60 soru vardır ve süre 2 dakikadır.</p>
+        <p>doğru cevap vermeye çalışın, ama mümkün olduğunca hızlı olun.</p>
+        <p><u>yanlış cevapların cezası vardır.</u></p>
+        <p><b>en fazla 1 eşleşme olabilir.</b></p>
+        <p>hiç eşleşme yoksa <span class="no-example">yok</span> seçeneğine tıklayın.</p>
+        <h4>hazır olduğunuzda başla düğmesine tıklayın.</h4>
+        <div class="start"><button id="start">başla</button></div>
+      </div>
+    </div>
+
+    <div class="notif">&nbsp;</div>
+
+    <div class="row">
+      <div class="objective" data-symbol="⊗" data-degrees="0" style="--deg: 0deg;"></div>
+      <div class="objective" data-symbol="⪽" data-degrees="0" style="--deg: 0deg;"></div>
+      <div></div>
+      <div class="option" data-symbol="⩪" data-degrees="270" style="--deg: 270deg;"></div>
+      <div class="option" data-symbol="⊏" data-degrees="90" style="--deg: 90deg;"></div>
+      <div class="option" data-symbol="⦻" data-degrees="0" style="--deg: 0deg;"></div>
+      <div class="option" data-symbol="±" data-degrees="180" style="--deg: 180deg;"></div>
+      <div class="option" data-symbol="⪽" data-degrees="0" style="--deg: 0deg;"></div>
+      <div class="option no"></div>
+    </div>
+
+    <div class="input">
+      <label for="years">yaşınız:
+        <input id="years" type="number" value="16" step="1" min="16" max="79">
+      </label>
+
+      <label for="raw-score">ham puan:
+        <input id="raw-score" type="number" value="0" step="1" disabled>
+      </label>
+
+      <label for="scaled-score">ölçek puanı:
+        <input id="scaled-score" type="number" value="0" step="1" disabled>
+      </label>
+
+      <label for="iq">iq:
+        <input id="iq" type="number" value="0" disabled>
+      </label>
+    </div>
+  </div>
+</body>
+</html>
