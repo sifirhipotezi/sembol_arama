@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; /* Added line height for better readability */
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0 40px;
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+#container > * {
+  margin-bottom: 20px;
+}
+
+.header {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 20px;  /* Added margin-top to lower the button */
+}
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.home-button:hover {
+  background-color: #444;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 18px;
+}
+
+.instructions {
+  padding: 20px;
+  font-size: 16px;
+  text-align: left;
+  min-height: 272px;
+}
+
+.instructions > span {
+  outline: 1px solid black;
+  font-weight: bold;
+  margin-left: 8px;
+  text-align: center;
+  height: 16px;
+  line-height: 16px;
+  vertical-align: middle;
+  font-family: 'Cambria', serif !important;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 16px 0 32px;
+}
+
+.row.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* .row > div {
+  margin: auto;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  user-select: none;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.objective::before,
+.option::before {
+  content: attr(data-symbol);
+  transform: rotate(var(--deg));
+  transform-origin: 50% 50%;
+  position: absolute;
+  font-size: 11px;
+}
+
+.option:hover:not(.wrong):not(.correct) {
+  cursor: pointer;
+  background: yellow;
+} */
+.row {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 16px 0 32px;
+}
+
+.row > div {
+  margin: auto;
+  width: 64px; /* Adjusted width to twice the size */
+  height: 64px; /* Adjusted height to twice the size */
+  text-align: center;
+  display: grid;
+  place-items: center;
+  user-select: none;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.objective::before,
+.option::before {
+  content: attr(data-symbol);
+  transform: rotate(var(--deg));
+  transform-origin: 50% 50%;
+  position: absolute;
+  font-size: 22px; /* Adjusted font size to twice the size */
+}
+
+.no::before {
+  font-size: 24px; /* Adjusted font size to twice the size */
+  font-family: 'Cambria', serif !important;
+  content: 'NO';
+  position: absolute;
+  font-weight: bold;
+  outline: 1px solid black;
+}
+
+.puzzle-number {
+  font-size: 32px; /* Adjusted font size to twice the size */
+  text-align: center;
+  opacity: 0.8;
+}
+
+.input > * {
+  margin-bottom: 8px; /* Adjusted margin-bottom to twice the size */
+}
+
+input {
+  box-sizing: border-box;
+  text-align: right;
+  width: 128px; /* Adjusted width to twice the size */
+  color: black;
+}
+
+.objective {
+  background: lightgrey;
+}
+
+.no::before {
+  font-size: 8px;
+  font-family: 'Cambria', serif !important;
+  content: 'NO';
+  position: absolute;
+  font-weight: bold;
+  outline: 1px solid black;
+}
+
+.no-example {
+  outline: 1px solid black;
+  font-weight: bold;
+  margin-left: 4px;
+  padding: 2px;
+}
+
+.flashing {
+  color: red;
+  animation: flashing 1s linear infinite;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.puzzle-number {
+  font-size: 16px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.puzzle-number::before {
+  content: '#';
+  opacity: 0.75;
+  margin: 0;
+}
+
+.puzzle-number.invisible {
+  opacity: 0;
+}
+
+@keyframes flashing {
+  0% {
+    color: red;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.input {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.input > * {
+  margin-bottom: 4px;
+}
+
+input {
+  box-sizing: border-box;
+  text-align: right;
+  width: 64px;
+  color: black;
+}
+
+.notif {
+  user-select: none;
+  margin: auto;
+  text-align: center;
+  font-family: Courier, monospace;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.fade-out {
+  font-weight: bold;
+  animation: fade-out 2s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.start {
+  text-align: center;
+}
